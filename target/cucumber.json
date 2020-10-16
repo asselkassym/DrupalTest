@@ -1,0 +1,62 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5492502225,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Navigate to landing page",
+        "description": "",
+        "id": "visitor-main;navigate-to-landing-page",
+        "after": [
+          {
+            "result": {
+              "duration": 188607390,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11936683298,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user is on the landing page",
+            "match": {
+              "location": "visitor_main_stepDefs.user_is_on_the_landing_page()"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@testRun"
+          }
+        ]
+      }
+    ],
+    "name": "visitor_main",
+    "description": "  As user I want to browse the visitor tab",
+    "id": "visitor-main",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/express_scripts_corporate/visitor_main.feature",
+    "tags": []
+  }
+]
