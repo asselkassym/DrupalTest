@@ -23,20 +23,6 @@ public class BrowserUtils {
     private static final Logger logger = LogManager.getLogger();
 
     /**
-     * @param expectedResult
-     * @param actualResult   Verifies if two strings are equals.
-     */
-    public static void verifyEquals(String expectedResult, String actualResult) {
-        if (expectedResult.equals(actualResult)) {
-            System.out.println("Passed");
-        } else {
-            System.out.println("Failed");
-            System.out.println("Expected result: " + expectedResult);
-            System.out.println("Actual result: " + actualResult);
-        }
-    }
-
-    /**
      * This method will put on pause execution
      *
      * @param seconds

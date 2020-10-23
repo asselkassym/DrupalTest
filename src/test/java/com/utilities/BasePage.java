@@ -1,5 +1,7 @@
 package com.utilities;
 
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -24,6 +26,10 @@ public abstract class BasePage {
 
     @FindBy(css = "#user-menu > a")
     protected WebElement userMenuName;
+
+
+    @FindBy(xpath = "//a[text()='Visitor']")
+    protected WebElement tabTitle;
 
 
     public BasePage() {
@@ -52,6 +58,24 @@ public abstract class BasePage {
         } catch (Exception e) {
             logger.error("Loader mask doesn't present.");
             System.out.println("Loader mask doesn't present.");
+        }
+    }
+
+    /**
+     * This method will navigate user to the specific module on corporate website.
+     *
+     * @param user
+     */
+    public void navigateToModule(String user) {
+        String moduleLocator = "//a[text()='"+user+"']";
+        try {
+            BrowserUtils.waitForClickablility(By.xpath(moduleLocator), Integer.valueOf(ConfigurationReader.getProperty("SHORT_WAIT")));
+            WebElement moduleElement = Driver.getDriver().findElement(By.xpath(moduleLocator));
+            new Actions(Driver.getDriver()).moveToElement(moduleElement).pause(200).click().build().perform();
+        } catch (Exception e) {
+            logger.error("Failed to click on :: " + user);
+            logger.error(e);
+            BrowserUtils.clickWithWait(By.xpath(moduleLocator), Integer.valueOf(ConfigurationReader.getProperty("SHORT_WAIT")));
         }
     }
 

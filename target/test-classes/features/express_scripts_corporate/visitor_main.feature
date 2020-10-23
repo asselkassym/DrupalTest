@@ -1,9 +1,16 @@
 Feature: visitor_main
   As user I want to browse the visitor tab
 
-#  Background:
-#    Given user is on the landing page
+  Background:
+    Given validate user is on landing page
 
   @testRun
-  Scenario: Navigate to landing page
-    Given user is on the landing page
+  Scenario Outline: Validate <"tabTitle"> tab
+    When click on <"tabTitle"> tab
+#    Then validate <"tabTitle"> tab is displayed
+  Examples:
+    |tabTitle|
+#    |Visitor |
+    |Plan Sponsor|
+#    |Physician   |
+#    |Consultant  |

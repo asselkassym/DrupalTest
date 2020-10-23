@@ -17,10 +17,7 @@ import org.junit.runner.RunWith;
                 "src/test/resources/features"
         },
         glue = {"com/express_scripts_corporate/step_definitions"},
-        //dry tun - to generate step definitions automatically
-        //you will see them in the console output
         dryRun = false
 )
 public class CukesRunner {
 }
-

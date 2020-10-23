@@ -16,5 +16,22 @@ public class visitor_main_stepDefs {
     public void user_is_on_the_landing_page() throws InterruptedException {
         pages.visitorMain().goToLandingPage();
     }
+
+    @Given("validate user is on landing page")
+    public void validate_user_is_on_the_landing_page() throws InterruptedException {
+        String pageTitleExpected = "Homepage | Express Scripts";
+        String pageTitleActual = pages.visitorMain().getPageTitle();
+        Assert.assertEquals(pageTitleExpected, pageTitleActual);
+    }
+    @When("click on <{string}> tab")
+    public void click_on_tab(String tabTitle) {
+        pages.visitorMain().navigateToModule(tabTitle);
+    }
+
+    @Then("validate <{string}> tab is displayed")
+    public void validate_tab_is_displayed(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
 }
 
